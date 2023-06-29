@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: PageView(
+        //Para detener la vista que de deslice
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
