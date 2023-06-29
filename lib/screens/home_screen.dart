@@ -28,10 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: PageView(
         controller: pageController,
         children: [
+          Container(
+            color: Colors.blue,
+          ),
           ListView(
-            //Vista para el Home
-            //Vista para el Home
-
             children: <Widget>[
               const Center(
                   child: Text(
@@ -52,9 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               //AllProducts(),
             ],
-          ),
-          Container(
-            color: Colors.blue,
           ),
           Container(
             color: Colors.green,
