@@ -22,40 +22,39 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MarketPlace'), centerTitle: true,
+        title: const Text('MarketPlace'),
+        centerTitle: true,
       ),
       body: PageView(
         controller: pageController,
-        
         children: [
           ListView(
+            //Vista para el Home
+
             children: <Widget>[
               const Center(
-              child: Text(
-              'Categorias',
-              style: TextStyle(fontSize: 20),
-            )),
+                  child: Text(
+                'Categorias',
+                style: TextStyle(fontSize: 20),
+              )),
               const SizedBox(
-             height: 10,
-            ),
-            CategoriasFormato(),
-            const Center(
-                child: Text(
+                height: 10,
+              ),
+              CategoriasFormato(),
+              const Center(
+                  child: Text(
                 'Productos',
-              style: TextStyle(fontSize: 20),
-            )),
-          const SizedBox(
-          height: 10,
-        ),
-        //AllProducts(),
-     ],
-
+                style: TextStyle(fontSize: 20),
+              )),
+              const SizedBox(
+                height: 10,
+              ),
+              //AllProducts(),
+            ],
           ),
           Container(
-              color: Colors.blue,
+            color: Colors.blue,
           ),
-          
-          
           Container(
             color: Colors.green,
           ),
@@ -68,8 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.shop_two), label: 'Tienda'),
-            BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Mensajes'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shop_two), label: 'Tienda'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.message), label: 'Mensajes'),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.blue,
