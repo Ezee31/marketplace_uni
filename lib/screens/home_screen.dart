@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: pageController,
         children: [
           ListView(
-            //Vista para el Home
+            //Vista para el Home 
 
             children: <Widget>[
               const Center(
