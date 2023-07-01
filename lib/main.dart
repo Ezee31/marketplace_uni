@@ -14,6 +14,7 @@ class MarketplaceApp extends StatelessWidget {
       title: 'Material app',
       routes: {
         'login': (_) => const LoginScreen(),
+        //Cambie de nombre el Screen de HomeScreen a MainScreen
         'home': (_) => const MainScreen(),
       },
       initialRoute: 'login',
