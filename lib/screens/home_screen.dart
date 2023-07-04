@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
-import 'package:marketplace_uni/widgets/categorias.dart';
-import 'package:marketplace_uni/widgets/highlights.dart';
+import 'package:marketplace_uni/widgets/Foryou_tittle.dart';
 import 'package:marketplace_uni/widgets/searchbar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40),
+        preferredSize: const Size.fromHeight(40),
         child: AppBar(
           backgroundColor: Colors.white,
           title: const Text(
@@ -26,14 +24,14 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           //Barra de busqueda
           Searchbarra(),
+          const ForYouWidget(),
           const SizedBox(
             height: 5,
           ),
-          CategoriasFormato(),
           const SizedBox(
             height: 15,
           ),
-          BrandHighlights(),
+          //BrandHighlights(),
         ],
       ),
     );

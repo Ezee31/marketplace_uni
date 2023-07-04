@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:marketplace_uni/screens/main_screen.dart';
 import 'package:marketplace_uni/screens/login_screen.dart';
 
@@ -9,7 +10,7 @@ void main() {
 class MarketplaceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material app',
       routes: {

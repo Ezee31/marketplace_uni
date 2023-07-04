@@ -9,14 +9,54 @@ class CategoriasFormato extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          CateogoriasCard(Icon(Icons.videogame_asset,size: 40,),'Consola'),
-          CateogoriasCard(Icon(Icons.games,size: 40,),'Juegos'),
-          CateogoriasCard(Icon(Icons.videogame_asset,size: 40,),'Controles'),
-          CateogoriasCard(Icon(Icons.headphones,size: 40,),'Accesorios'),
-          CateogoriasCard(Icon(Icons.book,size: 40,),'Consola'),
-          CateogoriasCard(Icon(Icons.book,size: 40,),'Consola'),
-          CateogoriasCard(Icon(Icons.book,size: 40,),'Consola'),
-          CateogoriasCard(Icon(Icons.book,size: 40,),'Consola'),
+          CateogoriasCard(
+              Icon(
+                Icons.videogame_asset,
+                size: 40,
+              ),
+              'Consola'),
+          CateogoriasCard(
+              Icon(
+                Icons.games,
+                size: 40,
+              ),
+              'Juegos'),
+          CateogoriasCard(
+              Icon(
+                Icons.videogame_asset,
+                size: 40,
+              ),
+              'Controles'),
+          CateogoriasCard(
+              Icon(
+                Icons.headphones,
+                size: 40,
+              ),
+              'Accesorios'),
+          CateogoriasCard(
+              Icon(
+                Icons.book,
+                size: 40,
+              ),
+              'Consola'),
+          CateogoriasCard(
+              Icon(
+                Icons.book,
+                size: 40,
+              ),
+              'Consola'),
+          CateogoriasCard(
+              Icon(
+                Icons.book,
+                size: 40,
+              ),
+              'Consola'),
+          CateogoriasCard(
+              Icon(
+                Icons.book,
+                size: 40,
+              ),
+              'Consola'),
         ],
       ),
     );

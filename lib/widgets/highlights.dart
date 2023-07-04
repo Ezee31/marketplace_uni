@@ -20,78 +20,119 @@ class BrandHighlights extends StatelessWidget {
           ),
         ),
         Container(
-          height: 170,
+          height: 200,
           width: MediaQuery.of(context).size.width,
           color: Colors.white,
-          child: PageView(
+          child: Column(
             children: [
-              Row(
+              PageView(
                 children: [
-                  Expanded(
-                    flex: 5,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(8, 0, 4, 8),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 5,
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(8, 0, 4, 8),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(4),
+                                child: Container(
+                                  height: 100,
+                                  color: Colors.deepOrange,
+                                  child: const Center(
+                                    child: Text(
+                                      'Youtube Ad Video/nAbout Brand',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                    flex: 1,
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(8, 0, 4, 8),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(4),
+                                        child: Container(
+                                          height: 80,
+                                          color: Colors.red,
+                                          child: const Center(
+                                            child: Text(
+                                              'Ad',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    )),
+                                Expanded(
+                                    flex: 1,
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(4, 0, 4, 8),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(4),
+                                        child: Container(
+                                          height: 80,
+                                          color: Colors.red,
+                                          child: const Center(
+                                            child: Text(
+                                              'Ad',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    )),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(4, 0, 8, 12),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(4),
                             child: Container(
-                              height: 100,
-                              color: Colors.deepOrange,
+                              height: 200,
+                              color: Colors.blue,
                               child: const Center(
-                                  child:
-                                      Text('Youtube Ad Video/nAbout Product')),
+                                child: Text(
+                                  'Add',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(8, 0, 4, 8),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(4),
-                                    child: Container(
-                                      height: 50,
-                                      color: Colors.red,
-                                    ),
-                                  ),
-                                )),
-                            Expanded(
-                                flex: 1,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(4, 0, 4, 8),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(4),
-                                    child: Container(
-                                      height: 50,
-                                      color: Colors.red,
-                                    ),
-                                  ),
-                                )),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(4, 0, 8, 12),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(4),
-                        child: Container(
-                          height: 160,
-                          color: Colors.blue,
-                        ),
                       ),
-                    ),
-                  ),
+                    ],
+                  )
                 ],
-              )
+              ),
             ],
           ),
         ),
