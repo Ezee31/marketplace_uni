@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:marketplace_uni/widgets/input_decoration.dart';
 
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -24,6 +26,7 @@ class LoginScreen extends StatelessWidget {
 
   SingleChildScrollView loginForm(BuildContext context) {
     return SingleChildScrollView(
+      
       child: Column(
               children: [
                 const SizedBox(height: 350),

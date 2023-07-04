@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "174558330266",
+    "project_id": "marketplaceuni-53ad9",
+    "storage_bucket": "marketplaceuni-53ad9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174558330266:android:bdd62914624bc3ffd2ce23",
+        "android_client_info": {
+          "package_name": "com.example.marketplace_uni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174558330266-krkhhn5r5port14m66kvf3eefsjrnshe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjGmanpOAXJEuuQhtN5umX-V9HUQgrLhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174558330266-krkhhn5r5port14m66kvf3eefsjrnshe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174558330266-3lrutvtekiqgjojebvg2n9fv0bvm9h1d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.marketplaceUni.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

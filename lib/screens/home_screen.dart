@@ -1,81 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:marketplace_uni/widgets/categorias.dart';
+import 'package:marketplace_uni/widgets/Foryou_tittle.dart';
+import 'package:marketplace_uni/widgets/searchbar.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
-  PageController pageController = PageController();
-  void onTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    pageController.jumpToPage((index));
-  }
-
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('MarketPlace'),
-        centerTitle: true,
+      backgroundColor: Colors.blue,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(40),
+        child: AppBar(
+          backgroundColor: Colors.white,
+          title: const Text(
+            'MarketPlace',
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+        ),
       ),
-      body: PageView(
-        controller: pageController,
-        children: [
-          ListView(
-            //Vista para el Home 
-
-            children: <Widget>[
-              const Center(
-                  child: Text(
-                'Categorias',
-                style: TextStyle(fontSize: 20),
-              )),
-              const SizedBox(
-                height: 10,
-              ),
-              CategoriasFormato(),
-              const Center(
-                  child: Text(
-                'Productos',
-                style: TextStyle(fontSize: 20),
-              )),
-              const SizedBox(
-                height: 10,
-              ),
-              //AllProducts(),
-            ],
+      body: ListView(
+        children: <Widget>[
+          //Barra de busqueda
+          Searchbarra(),
+          const ForYouWidget(),
+          const SizedBox(
+            height: 5,
           ),
-          Container(
-            color: Colors.blue,
+          const SizedBox(
+            height: 15,
           ),
-          Container(
-            color: Colors.green,
-          ),
-          Container(
-            color: Colors.yellow,
-          ),
+          //BrandHighlights(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.shop_two), label: 'Tienda'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.message), label: 'Mensajes'),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.blue,
-          unselectedItemColor: Colors.grey,
-          onTap: onTapped),
-    );
+    );         
   }
 }
