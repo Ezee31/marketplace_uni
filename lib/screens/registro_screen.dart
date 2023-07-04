@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:marketplace_uni/screens/login_screen.dart';
 import 'package:marketplace_uni/widgets/input_decoration.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class UpdateProfileScreen extends StatelessWidget {
-  const UpdateProfileScreen({Key? key}) : super(key: key);
+class RegristroProfileScreen extends StatelessWidget {
+  RegristroProfileScreen({Key? key}) : super(key: key);
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -60,18 +66,7 @@ class UpdateProfileScreen extends StatelessWidget {
                   children: [
                     //TextFormField de Actualizar usuario
                     TextFormField(
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(width: 2, color: Colors.blue)),
-                          label: Text("Nombre Completo"),
-                          prefixIcon: Icon(LineAwesomeIcons.user)),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    TextFormField(
+                      controller: emailController,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
@@ -84,18 +79,7 @@ class UpdateProfileScreen extends StatelessWidget {
                       height: 40,
                     ),
                     TextFormField(
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(width: 2, color: Colors.blue)),
-                          label: Text("Telefono"),
-                          prefixIcon: Icon(LineAwesomeIcons.phone)),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    TextFormField(
+                      controller: passwordController,
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
@@ -111,7 +95,13 @@ class UpdateProfileScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 60,
                       child: ElevatedButton(
-                        onPressed: () => Get.to(const UpdateProfileScreen()),
+                        onPressed: () async {
+                          await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: emailController.text,
+                                  password: passwordController.text);
+                          Get.to(LoginScreen());
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue,
                             side: BorderSide.none,

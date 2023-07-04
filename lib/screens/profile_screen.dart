@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:marketplace_uni/screens/update_profile_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:marketplace_uni/screens/login_screen.dart';
+import 'package:marketplace_uni/screens/profilescreens/ajustes_screen.dart';
+import 'package:marketplace_uni/screens/profilescreens/update_profile_screen.dart';
 import 'package:marketplace_uni/widgets/profile_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -78,7 +82,7 @@ class ProfileScreen extends StatelessWidget {
               profilemenu_settings(
                 title: "Ajustes",
                 icon: LineAwesomeIcons.cog,
-                onPress: () {},
+                onPress: () => Get.to(const AjustesProfileScreen()),
               ),
               profilemenu_settings(
                 title: "En Venta",
@@ -104,7 +108,11 @@ class ProfileScreen extends StatelessWidget {
                 icon: LineAwesomeIcons.alternate_sign_out,
                 textColor: Colors.red,
                 endIcon: false,
-                onPress: () {},
+                onPress: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
               ),
             ],
           ),

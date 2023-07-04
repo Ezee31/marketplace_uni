@@ -4,30 +4,38 @@ import 'package:marketplace_uni/screens/Main_screen.dart';
 import 'package:marketplace_uni/screens/login_screen.dart';
 import 'package:marketplace_uni/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MarketplaceApp());
-
-await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
+  runApp(MarketplaceApp());
 }
 
-class MarketplaceApp extends StatelessWidget { 
+class MarketplaceApp extends StatelessWidget {
   @override
-  
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-    
       title: 'Material app',
       routes: {
         'splash_screen': (_) => const SplashScreen(),
-        'login': (_) => const LoginScreen(),
-       'home' : (_) => const MainScreen(), 
+        'home': (_) => StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const MainScreen();
+                } else {
+                  return LoginScreen();
+                }
+              },
+            ),
+        'main': (_) => const MainScreen(),
       },
       initialRoute: 'splash_screen',
     );
   }
-} 
+}
