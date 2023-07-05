@@ -5,7 +5,7 @@ import 'package:marketplace_uni/widgets/searchbar.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -20,20 +20,15 @@ class HomeScreen extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
-          //Barra de busqueda
+          // Barra de búsqueda
           Searchbarra(),
-          const ForYouWidget(),
-          const SizedBox(
-            height: 5,
+          const Expanded(
+            child: ForYouWidget(),
           ),
-          const SizedBox(
-            height: 15,
-          ),
-          //BrandHighlights(),
         ],
       ),
-    );         
+    );
   }
 }
