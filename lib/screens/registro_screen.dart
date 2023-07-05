@@ -70,6 +70,7 @@ class RegristroProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     TextFormField(
+
                       controller: nameController,
                       decoration: const InputDecoration(
                         labelText: "Nombre",
@@ -90,6 +91,7 @@ class RegristroProfileScreen extends StatelessWidget {
                       height: 40,
                     ),
                     TextFormField(
+                      obscureText: true,
                       controller: passwordController,
                       decoration: const InputDecoration(
                         labelText: "Contraseña",
