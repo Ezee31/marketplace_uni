@@ -16,8 +16,12 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Chat'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(55),
+        child: AppBar(
+          backgroundColor: Colors.cyan,
+          title: const Text('Chat', style: TextStyle(color: Colors.black),),
+          centerTitle: true,)
       ),
       body: Column(
         children: [
@@ -48,7 +52,11 @@ class _ChatScreenState extends State<ChatScreen> {
               },
             ),
           ),
-          Padding(
+                    Container(
+                      decoration: BoxDecoration(
+              color: Colors.cyan,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
             padding: EdgeInsets.all(8.0),
             child: Row(
               children: [
@@ -56,6 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: TextField(
                     controller: _messageController,
                     decoration: const InputDecoration(hintText: 'Escribe tu mensaje'),
+                    
                   ),
                 ),
                 IconButton(
