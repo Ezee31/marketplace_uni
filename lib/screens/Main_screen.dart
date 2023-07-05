@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:marketplace_uni/screens/guardado_screen.dart';
 import 'package:marketplace_uni/screens/home_screen.dart';
-import 'package:marketplace_uni/screens/message_screen.dart';
+import 'package:marketplace_uni/screens/chat_screen.dart';
 import 'package:marketplace_uni/screens/profile_screen.dart';
+import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
           ProfileScreen(),
           HomeScreen(),
           GuardadoScreen(),
-          MessageScreen()
+          ChatScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -53,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
                   CupertinoIcons.home,
                   size: 25,
                 ),
-                label: 'Home'),
+                label: 'Inicio'),
             BottomNavigationBarItem(
                 icon: Icon(
                   CupertinoIcons.bookmark_fill,
@@ -65,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
                   Icons.chat,
                   size: 22,
                 ),
-                label: 'Mensajes'),
+                label: 'Chat'),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.blue,
@@ -75,3 +76,4 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
+

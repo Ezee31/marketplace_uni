@@ -6,10 +6,11 @@ class GuardadoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40),
+      appBar: PreferredSize(       
+        preferredSize: Size.fromHeight(55),
         child: AppBar(
-          title: const Text('MarketPlace'),
+          backgroundColor: Colors.cyan,
+          title: const Text('Guardado', style: TextStyle(color: Colors.black)),
           centerTitle: true,
         ),
       ),

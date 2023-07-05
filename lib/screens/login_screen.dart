@@ -159,7 +159,7 @@ class LoginScreen extends StatelessWidget {
       width: double.infinity,
       child: const Icon(
         Icons.person_pin,
-        color: Colors.white,
+        color: Colors.black,
         size: 170,
       ),
     ));
@@ -169,8 +169,10 @@ class LoginScreen extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
-        Color.fromRGBO(0, 0, 0, 1),
-        Color.fromRGBO(0, 139, 139, 1),
+      // Color.fromRGBO(0, 0, 0, 1),
+       Color.fromRGBO(0, 80, 80, 1),
+        Colors.cyan,
+       Color.fromRGBO(0, 80, 80, 1),
       ])),
       width: double.infinity,
       height: size.height * 0.4,

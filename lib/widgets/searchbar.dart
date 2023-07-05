@@ -15,11 +15,11 @@ class Searchbarra extends StatelessWidget {
               child: const TextField(
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.grey,
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.fromLTRB(8, 7, 8, 0),
                     hintText: 'Buscar en la Tienda',
-                    hintStyle: TextStyle(color: Colors.grey),
+                    hintStyle: TextStyle(color: Colors.black),
                     prefixIcon: Icon(
                       IconlyLight.search,
                       size: 20,

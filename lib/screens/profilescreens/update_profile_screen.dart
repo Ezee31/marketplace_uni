@@ -10,14 +10,18 @@ class UpdateProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: const Icon(LineAwesomeIcons.angle_left),
-        ),
-        title: const Text(
-          "Editar Perfil",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      appBar: PreferredSize(       
+        preferredSize: const Size.fromHeight(55),
+        child: AppBar(
+          backgroundColor: Colors.cyan,          
+          leading: IconButton(
+            onPressed: () => Get.back(),
+            icon: const Icon(LineAwesomeIcons.angle_left),
+          ),
+          title: const Text(
+            "Editar Perfil",
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -43,11 +47,11 @@ class UpdateProfileScreen extends StatelessWidget {
                       height: 35,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: Colors.yellow),
+                          color: Colors.black),
                       child: const Icon(
                         LineAwesomeIcons.camera,
                         size: 20,
-                        color: Colors.black,
+                        color: Colors.cyan,
                       ),
                     ),
                   )
@@ -65,7 +69,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 2, color: Colors.blue)),
+                                  BorderSide(width: 2, color: Colors.cyan)),
                           label: Text("Nombre Completo"),
                           prefixIcon: Icon(LineAwesomeIcons.user)),
                     ),
@@ -77,7 +81,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 2, color: Colors.blue)),
+                                  BorderSide(width: 2, color: Colors.cyan)),
                           label: Text("Correo Electronico"),
                           prefixIcon: Icon(LineAwesomeIcons.envelope_1)),
                     ),
@@ -89,7 +93,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 2, color: Colors.blue)),
+                                  BorderSide(width: 2, color: Colors.cyan)),
                           label: Text("Telefono"),
                           prefixIcon: Icon(LineAwesomeIcons.phone)),
                     ),
@@ -101,7 +105,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(width: 2, color: Colors.blue)),
+                                  BorderSide(width: 2, color: Colors.cyan)),
                           label: Text("Contraseña"),
                           prefixIcon: Icon(LineAwesomeIcons.lock)),
                     ),
@@ -114,12 +118,12 @@ class UpdateProfileScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () => Get.to(const ProfileScreen()),
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
+                            backgroundColor: Colors.black,
                             side: BorderSide.none,
                             shape: const LinearBorder()),
                         child: const Text(
                           "Editar Perfil",
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),

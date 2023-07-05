@@ -14,13 +14,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Perfil',
-          style: TextStyle(color: Colors.black),
+      appBar: PreferredSize(
+         preferredSize: Size.fromHeight(55),
+        child: AppBar(
+          backgroundColor: Colors.cyan,
+          title: const Text(
+            'Perfil',
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -46,11 +49,11 @@ class ProfileScreen extends StatelessWidget {
                       height: 35,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: Colors.yellow),
+                          color: Colors.black),
                       child: const Icon(
                         LineAwesomeIcons.alternate_pencil,
                         size: 20,
-                        color: Colors.black,
+                        color: Colors.cyan,
                       ),
                     ),
                   )
@@ -67,9 +70,9 @@ class ProfileScreen extends StatelessWidget {
                   //sirve para Navegar
                   onPressed: () => Get.to(const UpdateProfileScreen()),
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.yellow, side: BorderSide.none),
+                      backgroundColor: Colors.black, side: BorderSide.none),
                   child: const Text("Editar Perfil",
-                      style: TextStyle(color: Colors.black)),
+                      style: TextStyle(color: Colors.white)),
                 ),
               ),
               const SizedBox(height: 30),
@@ -106,7 +109,7 @@ class ProfileScreen extends StatelessWidget {
               profilemenu_settings(
                 title: "Cerrar sesion",
                 icon: LineAwesomeIcons.alternate_sign_out,
-                textColor: Colors.red,
+                textColor: Colors.red.withOpacity(0.8),
                 endIcon: false,
                 onPress: () async {
                   await FirebaseAuth.instance.signOut();

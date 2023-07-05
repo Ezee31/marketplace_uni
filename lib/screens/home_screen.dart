@@ -8,13 +8,13 @@ class HomeScreen extends StatelessWidget {
  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(40),
+        preferredSize: const Size.fromHeight(55),
         child: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.cyan,
           title: const Text(
-            'MarketPlace',
+            'AceStore',
             style: TextStyle(color: Colors.black),
           ),
           centerTitle: true,
