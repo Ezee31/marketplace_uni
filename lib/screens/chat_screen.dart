@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -29,26 +28,35 @@ class _ChatScreenState extends State<ChatScreen> {
             child: StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance.collection('messages').orderBy('timestamp').snapshots(),
               builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                if (snapshot.hasError) {
-                  return const Text('Error al cargar los mensajes');
-                }
+                return StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance.collection('users').snapshots(), 
+                  builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshotUser) {
+                    if (snapshot.hasError) {
+                      return const Text('Error al cargar los mensajes');
+                    }
 
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
-                }
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const CircularProgressIndicator();
+                    }
 
-                List<QueryDocumentSnapshot> messages = snapshot.data!.docs;
+                    List<QueryDocumentSnapshot> messages = snapshot.data!.docs;
+                    List<QueryDocumentSnapshot> users = snapshotUser.data!.docs;
 
-                return ListView.builder(
-                  itemCount: messages.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var message = messages[index];
-                    return ListTile(
-                      title: Text(message['messages']),
-                      subtitle: Text(message['senderId']),
+                    return ListView.builder(
+                      itemCount: messages.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        var message = messages[index];
+                        var found = users.where((user) => user.id == message['senderId']).toList();
+
+                        final userName = found.isNotEmpty ? found[0]["name"] : "Usuario desconocido";
+
+                        return ListTile(
+                          title: Text(message['messages']),
+                          subtitle: Text(userName),
+                        );
+                      },
                     );
-                  },
-                );
+                });
               },
             ),
           ),
@@ -107,6 +115,18 @@ class _ChatScreenState extends State<ChatScreen> {
     } else {
       // Si el usuario no está autenticado, devuelve un valor predeterminado o maneja el caso en consecuencia
       return ''; // Por ejemplo, puedes devolver una cadena vacía
+    }
+  }
+
+  Future<String> getCurrentUserName(String userId) async {
+    final userCollection = FirebaseFirestore.instance.collection('users');
+    final userDocument = await userCollection.doc(userId).get();
+    
+    if (userDocument.exists) {
+      final Map<String, dynamic>? user = userDocument.data();
+      return user?["name"];
+    } else {
+      return "Unknown";
     }
   }
 }
