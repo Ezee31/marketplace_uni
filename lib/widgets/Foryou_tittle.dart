@@ -18,6 +18,13 @@ class ForYouWidgetState extends State<ForYouWidget> {
     'Accesorios',
     'Audifonos',
   ];
+  final List<Icon> _Iconlabel = <Icon>[
+    Icon(Icons.videogame_asset),
+    Icon(Icons.games),
+    Icon(Icons.sports_esports),
+    Icon(Icons.cases_sharp),
+    Icon(Icons.headphones)
+  ];
 
   int _index = 0;
 
@@ -34,8 +41,9 @@ class ForYouWidgetState extends State<ForYouWidget> {
               itemCount: _categoryLabel.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.only(right: 20),
                   child: ActionChip(
+                    avatar: _Iconlabel[index],
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
@@ -45,7 +53,7 @@ class ForYouWidgetState extends State<ForYouWidget> {
                     label: Text(
                       _categoryLabel[index],
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
                         color: _index == index ? Colors.white : Colors.black,
                       ),
                     ),
