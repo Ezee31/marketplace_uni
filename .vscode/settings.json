@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "F:/marketplace_uni/windows/flutter"
+    "cmake.sourceDirectory": "F:/marketplace_uni/windows/flutter",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

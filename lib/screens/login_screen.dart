@@ -116,10 +116,27 @@ class LoginScreen extends StatelessWidget {
                               );
 
                               User? user = userCredential.user;
-                              print('Iniciando sesion: ${user!.uid}');
+                              print('Iniciando sesión: ${user!.uid}');
                               Navigator.pushReplacementNamed(context, 'main');
                             } catch (e) {
-                              print('Error al iniciar sesion');
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('ERROR'),
+                                    content: Text(
+                                        'El Correo electronico o la contraseña son invalidos'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text('OK papu'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             }
                           },
                         )
